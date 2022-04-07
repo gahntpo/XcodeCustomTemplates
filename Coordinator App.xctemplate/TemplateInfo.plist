@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.karinparater.coordinator</string>
+	<key>Concrete</key>
+	<true/>
+	<key>SortOrder</key>
+	<integer>1</integer>
+	<key>Description</key>
+	<string>Templete with coordinator pattern</string>
+	<key>NameOfInitialFileForEditor</key>
+	<string>SceneDelegate</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>Info.plist:UIApplicationSceneManifest</key>
+		<dict>
+			<key>Beginning</key>
+			<string>
+            &lt;key&gt;UIApplicationSceneManifest&lt;/key&gt;
+            &lt;dict&gt;
+                &lt;key&gt;UIApplicationSupportsMultipleScenes&lt;/key&gt;
+                &lt;false/&gt;
+                &lt;key&gt;UISceneConfigurations&lt;/key&gt;
+                &lt;dict&gt;
+                    &lt;key&gt;UIWindowSceneSessionRoleApplication&lt;/key&gt;
+                    &lt;array&gt;
+                        &lt;dict&gt;
+                            &lt;key&gt;UISceneConfigurationName&lt;/key&gt;
+                            &lt;string&gt;Default Configuration&lt;/string&gt;
+                            &lt;key&gt;UISceneDelegateClassName&lt;/key&gt;
+                            &lt;string&gt;___VARIABLE_moduleNamePrefixForClasses:XML___SceneDelegate&lt;/string&gt;
+</string>
+			<key>End</key>
+			<string>
+                        &lt;/dict&gt;
+                    &lt;/array&gt;
+                &lt;/dict&gt;
+            &lt;/dict&gt;
+</string>
+			<key>Indent</key>
+			<integer>2</integer>
+		</dict>
+		<key>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</key>
+		<string>
+&lt;key&gt;UISceneStoryboardFile&lt;/key&gt;
+&lt;string&gt;Main&lt;/string&gt;
+</string>
+		<key>*:implementation:methods:applicationconfigurationForConnectingSceneSession:comment</key>
+		<string>// Called when a new scene session is being created.
+// Use this method to select a configuration to create the new scene with.</string>
+		<key>*:implementation:methods:applicationdidDiscardSceneSessions:comment</key>
+		<string>// Called when the user discards a scene session.
+// If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+// Use this method to release any resources that were specific to the discarded scenes, as they will not return.</string>
+		<key>*:implementation:methods:sceneWillConnectToSession:comments</key>
+		<string>// Coordinator
+if let windowScene = scene as? UIWindowScene {
+       let window = UIWindow(windowScene: windowScene)
+                    
+       coordinator = MainCoordinator()
+       coordinator?.start()
+                    
+       window.rootViewController = coordinator?.rootViewController
+       self.window = window
+       window.makeKeyAndVisible()
+ }
+</string>
+		<key>*:implementation:methods:sceneDidDisconnect:comments</key>
+		<string>// Called as the scene is being released by the system.
+// This occurs shortly after the scene enters the background, or when its session is discarded.
+// Release any resources associated with this scene that can be re-created the next time the scene connects.
+// The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).</string>
+		<key>*:implementation:methods:sceneDidBecomeActive:comments</key>
+		<string>// Called when the scene has moved from an inactive state to an active state.
+// Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.</string>
+		<key>*:implementation:methods:sceneWillResignActive:comments</key>
+		<string>// Called when the scene will move from an active state to an inactive state.
+// This may occur due to temporary interruptions (ex. an incoming phone call).</string>
+		<key>*:implementation:methods:sceneWillEnterForeground:comments</key>
+		<string>// Called as the scene transitions from the background to the foreground.
+// Use this method to undo the changes made on entering the background.</string>
+		<key>*:implementation:methods:sceneDidEnterBackground:comments</key>
+		<string>// Called as the scene transitions from the foreground to the background.
+// Use this method to save data, release shared resources, and store enough scene-specific state information
+// to restore the scene back to its current state.</string>
+	</dict>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>appLifecycle</string>
+			<key>Units</key>
+			<dict>
+				<key>Cocoa</key>
+				<array>
+					<dict>
+						<key>Nodes</key>
+						<array>
+							<string>Info.plist:UIApplicationSceneManifest</string>
+						</array>
+						<key>Targets</key>
+						<array>
+							<dict>
+								<key>SharedSettings</key>
+								<dict>
+									<key>INFOPLIST_FILE</key>
+									<string>___PACKAGENAME___/Info.plist</string>
+								</dict>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Swift</key>
+				<array>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>appLifecycle</key>
+							<string>Cocoa</string>
+						</dict>
+						<key>Nodes</key>
+						<array>
+							<string>AppDelegate.swift:implementation:methods:UISceneSessionLifecycleBanner</string>
+							<string>AppDelegate.swift:implementation:methods:applicationconfigurationForConnectingSceneSession(func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions\) -&gt; UISceneConfiguration)</string>
+							<string>AppDelegate.swift:implementation:methods:applicationconfigurationForConnectingSceneSession:comment</string>
+							<string>AppDelegate.swift:implementation:methods:applicationconfigurationForConnectingSceneSession:body</string>
+							<string>AppDelegate.swift:implementation:methods:applicationdidDiscardSceneSessions(func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set&lt;UISceneSession&gt;\))</string>
+							<string>AppDelegate.swift:implementation:methods:applicationdidDiscardSceneSessions:comment</string>
+							<string>SceneDelegate.swift:comments</string>
+							<string>SceneDelegate.swift:imports:importCocoa</string>
+							<string>SceneDelegate.swift:implementation(SceneDelegate: UIResponder, UIWindowSceneDelegate)</string>
+							<string>SceneDelegate.swift:implementation:properties:window</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession(func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions\))</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:comments</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneDidDisconnect(func sceneDidDisconnect(_ scene: UIScene\))</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneDidDisconnect:comments</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneDidBecomeActive(func sceneDidBecomeActive(_ scene: UIScene\))</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneDidBecomeActive:comments</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillResignActive(func sceneWillResignActive(_ scene: UIScene\))</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillResignActive:comments</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillEnterForeground(func sceneWillEnterForeground(_ scene: UIScene\))</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneWillEnterForeground:comments</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneDidEnterBackground(func sceneDidEnterBackground(_ scene: UIScene\))</string>
+							<string>SceneDelegate.swift:implementation:methods:sceneDidEnterBackground:comments</string>
+							<string>ViewController.swift:comments</string>
+							<string>ViewController.swift:imports:importCocoa</string>
+							<string>ViewController.swift:implementation(___FILEBASENAME___: UIViewController)</string>
+							<string>ViewController.swift:implementation:methods:viewDidLoad(override func viewDidLoad(\))</string>
+							<string>ViewController.swift:implementation:methods:viewDidLoad:super</string>
+							<string>ContentViewModel.swift</string>
+							<string>ContentView.swift</string>
+							<string>Coordinator.swift</string>
+							<string>MainCoordinator.swift</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>AppDelegate.swift:implementation:properties:window</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationWillResignActive</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationWillResignActive:comments</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidEnterBackground</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidEnterBackground:comments</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationWillEnterForeground</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationWillEnterForeground:comments</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidBecomeActive</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:applicationDidBecomeActive:comments</key>
+							<string></string>
+							<key>AppDelegate.swift:implementation:methods:UISceneSessionLifecycleBanner</key>
+							<string>// MARK: UISceneSession Lifecycle </string>
+							<key>AppDelegate.swift:implementation:methods:applicationconfigurationForConnectingSceneSession:body</key>
+							<string>return UISceneConfiguration(name: &quot;Default Configuration&quot;, sessionRole: connectingSceneSession.role)</string>
+							<key>SceneDelegate.swift:implementation:properties:window</key>
+							<string>var window: UIWindow?
+var coordinator: MainCoordinator?</string>
+							<key>SceneDelegate.swift:implementation:methods:sceneWillConnectToSession:body</key>
+							<string>guard let _ = (scene as? UIWindowScene) else { return }</string>
+							<key>ContentViewModel.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>ContentViewModel.swift</string>
+								<key>SortOrder</key>
+								<integer>98</integer>
+							</dict>
+							<key>ContentView.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>ContentView.swift</string>
+								<key>SortOrder</key>
+								<integer>97</integer>
+							</dict>
+							<key>Coordinator.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>Coordinator.swift</string>
+								<key>SortOrder</key>
+								<integer>99</integer>
+							</dict>
+							<key>MainCoordinator.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>MainCoordinator.swift</string>
+								<key>SortOrder</key>
+								<integer>100</integer>
+							</dict>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>Image</key>
+	<dict>
+		<key>BundleIdentifier</key>
+		<string>com.apple.dt.IDEKit</string>
+		<key>BundleImageName</key>
+		<string>app</string>
+	</dict>
+</dict>
+</plist>
