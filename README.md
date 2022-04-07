@@ -11,6 +11,9 @@ This is the code used for one of my Youtube tutorials. You can watch it here: ht
 - Create Templates folder if you don't already have one
 - move templates into Templates folder
 - close Xcode and restart (you might need to restart you mac to see all the correct changes)
-- creaete new Xcode project and choose one of you new templates
+- create new Xcode project and choose one of you new templates
 
+<img src="https://github.com/gahntpo/XcodeCustomTemplates/blob/main/templates_in_xode.png"  width=80% height=40%> 
 
+##
+If you create a new Project with the SwiftUI app template, you should have the same project setup as the TestProject attached to this repository.
